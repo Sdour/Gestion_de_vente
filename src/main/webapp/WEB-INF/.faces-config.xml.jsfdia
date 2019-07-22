@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#User_login.jsp" PATH="/User_login.jsp"
+  SHAPE="80,160,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#User_login.jsp:0" NAME="item"
+   PATH="/User_login.jsp" SHAPE="96,174,47,15" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#User_login.jsp:1" NAME="item1"
+   PATH="/User_login.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="fail::#User_error.jsp" NAME="output"
+    PATH="/User_error.jsp" TARGET="rules:#User_error.jsp" TITLE="fail" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#AddArticle.xhtml" PATH="/AddArticle.xhtml"
+  SHAPE="656,328,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#AddArticle.xhtml:0" NAME="item"
+   PATH="/AddArticle.xhtml" SHAPE="680,358,47,15" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="addsucced::#Articles.xhtml" NAME="output"
+    PATH="/Articles.xhtml" TARGET="rules:#Articles.xhtml"
+    TITLE="addsucced" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#AddArticle.xhtml:1" NAME="item1"
+   PATH="/AddArticle.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="addfailed::#AddArticle.xhtml" NAME="output"
+    PATH="/AddArticle.xhtml" TARGET="rules:#AddArticle.xhtml"
+    TITLE="addfailed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#AddCmd.xhtml" PATH="/AddCmd.xhtml"
+  SHAPE="1072,288,50,57" model-entity="JSFProcessGroup" persistent="true">
+  <PROCESS-ITEM ID="rules:#AddCmd.xhtml:0" NAME="item"
+   PATH="/AddCmd.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="addcmdfailed::#AddCmd.xhtml" NAME="output"
+    PATH="/AddCmd.xhtml" TARGET="rules:#AddCmd.xhtml"
+    TITLE="addcmdfailed" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addcmdsucced::#Commands.xhtml"
+    NAME="output1" PATH="/Commands.xhtml" TARGET="rules:#Commands.xhtml"
+    TITLE="addcmdsucced" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#EditClient.xhtml" PATH="/EditClient.xhtml"
+  SHAPE="848,272,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#EditClient.xhtml:0" NAME="item"
+   PATH="/EditClient.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="addclientsucced::#Clients.xhtml"
+    NAME="output" PATH="/Clients.xhtml" TARGET="rules:#Clients.xhtml"
+    TITLE="addclientsucced" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#EditClient.xhtml:1" NAME="item1"
+   PATH="/EditClient.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="addclientfailed::#EditClient.xhtml"
+    NAME="output" PATH="/EditClient.xhtml"
+    TARGET="rules:#EditClient.xhtml" TITLE="addclientfailed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Clients.xhtml" PATH="/Clients.xhtml"
+  SHAPE="856,96,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#EditUser.xhtml" PATH="/EditUser.xhtml"
+  SHAPE="344,296,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#EditUser.xhtml:0" NAME="item"
+   PATH="/EditUser.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="addusersucced::#User_login.jsp"
+    NAME="output" PATH="/User_login.jsp" TARGET="rules:#User_login.jsp"
+    TITLE="addusersucced" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="adduserfailed::#EditUser.xhtml"
+    NAME="output1" PATH="/EditUser.xhtml" TARGET="rules:#EditUser.xhtml"
+    TITLE="adduserfailed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Articles.xhtml" PATH="/Articles.xhtml"
+  SHAPE="688,136,50,41" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#Commands.xhtml" PATH="/Commands.xhtml"
+  SHAPE="1096,64,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Commands.xhtml:0" NAME="item"
+   PATH="/Commands.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Addcmd::#AddCmd.xhtml" NAME="output"
+    PATH="/AddCmd.xhtml" TARGET="rules:#AddCmd.xhtml" TITLE="Addcmd" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addcmdsucced::#Commands.xhtml"
+    NAME="output1" PATH="/Commands.xhtml" TARGET="rules:#Commands.xhtml"
+    TITLE="addcmdsucced" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="192,32,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#User_error.jsp" PATH="/User_error.jsp"
+  SHAPE="432,48,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#User_error.jsp:0" NAME="item"
+   PATH="/User_error.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="fail::#User_error.jsp" NAME="output"
+    PATH="/User_error.jsp" TARGET="rules:#User_error.jsp" TITLE="fail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="success::#index.xhtml" NAME="output1"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

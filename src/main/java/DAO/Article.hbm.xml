@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="DAO.Article" table="article" catalog="vente">
+        <id name="codeart" type="java.lang.Integer">
+            <column name="CODEART" default="2"/>
+            <generator class="identity"  />
+        </id>
+        <property name="nomart" type="java.lang.String">
+            <column name="NOMART" length="65535" />
+        </property>
+        <property name="descart" type="java.lang.String">
+            <column name="DESCART" length="65535" />
+        </property>
+        <property name="prixart" type="java.lang.Float">
+            <column name="PRIXART" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

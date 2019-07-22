@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Articles</title>
+	<!-- Fontfaces CSS-->
+	<link href="css/font-face.css" rel="stylesheet" media="all" />
+	<link href="vendor/font-awesome-4.7/css/font-awesome.min.css"
+		rel="stylesheet" media="all" />
+	<link href="vendor/font-awesome-5/css/fontawesome-all.min.css"
+		rel="stylesheet" media="all" />
+	<link href="vendor/mdi-font/css/material-design-iconic-font.min.css"
+		rel="stylesheet" media="all" />
+
+	<!-- Bootstrap CSS-->
+
+
+	<!-- Vendor CSS-->
+	<link href="vendor/animsition/animsition.min.css" rel="stylesheet"
+		media="all" />
+	<link
+		href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css"
+		rel="stylesheet" media="all" />
+	<link href="vendor/wow/animate.css" rel="stylesheet" media="all" />
+	<link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet"
+		media="all" />
+	<link href="vendor/slick/slick.css" rel="stylesheet" media="all" />
+	<link href="vendor/select2/select2.min.css" rel="stylesheet"
+		media="all" />
+	<link href="vendor/perfect-scrollbar/perfect-scrollbar.css"
+		rel="stylesheet" media="all" />
+
+	<!-- Main CSS-->
+	<link href="css/theme.css" rel="stylesheet" media="all" />
+	<!-- fin adds -->
+</h:head>
+<h:body styleClass="animsition">
+	<div class="page-wrapper">
+		<!-- HEADER MOBILE-->
+		<header class="header-mobile d-block d-lg-none">
+			<div class="header-mobile__bar">
+				<div class="container-fluid">
+					<div class="header-mobile-inner">
+						<a class="logo" href="index.html"> <img
+							src="images/icon/logo.png" alt="CoolAdmin" />
+						</a>
+						<button class="hamburger hamburger--slider" type="button">
+							<span class="hamburger-box"> <span class="hamburger-inner"></span>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<nav class="navbar-mobile">
+				<div class="container-fluid">
+					<ul class="navbar-mobile__list list-unstyled">
+						<li class="has-sub"><a class="js-arrow" href="index.html">
+								<i class="fas fa-tachometer-alt"></i>Acceuil
+						</a></li>
+						<li><a href="chart.html"> <i class="fas fa-chart-bar"></i>Utilisateurs
+						</a></li>
+						<li><a href="table.html"> <i class="fas fa-table"></i>Articles
+						</a></li>
+						<li><a href="form.html"> <i class="far fa-check-square"></i>Commandes
+						</a></li>
+						<li><a href="map.html"> <i class="fas fa-map-marker-alt"></i>Client
+						</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- END HEADER MOBILE-->
+		<!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block">
+			<div class="logo">
+				<a href="#"> <img src="images/icon/logo.png" alt="Cool Admin" />
+				</a>
+			</div>
+			<div class="menu-sidebar__content js-scrollbar1">
+				<nav class="navbar-sidebar">
+					<ul class="list-unstyled navbar__list">
+						<li><a class="js-arrow" href="index.faces"> <i
+								class="fas fa-tachometer-alt"></i>Acceuil
+						</a></li>
+
+						<c:set var="ses" scope="session"
+							value="${session.getAttribute('user').getProfil()}">
+						</c:set>
+						<c:if test="${ses=='admin'}">
+							<li><a href="Users.faces"> <i class="fas fa-users"></i>Utilisateurs
+							</a></li>
+						</c:if>
+
+						<li class="active"><a href="Articles.faces"> <i
+								class="fas fa-list"></i>Articles
+						</a></li>
+						<li><a href="Commands.faces"> <i class="fas fa-cart-plus"></i>Commandes
+						</a></li>
+						<li><a href="Clients.faces"> <i
+								class="fas fa-address-book"></i>Client
+						</a></li>
+
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<!-- END MENU SIDEBAR-->
+		<!-- PAGE CONTAINER-->
+		<div class="page-container">
+			<!-- HEADER DESKTOP-->
+			<header class="header-desktop">
+				<div class="section__content section__content--p30">
+					<div class="container-fluid">
+						<div class="header-wrap">
+							<form class="form-header" action="" method="POST">
+								<input class="au-input au-input--xl" type="text" name="search"
+									placeholder="Search for datas &amp; reports..." />
+								<button class="au-btn--submit" type="submit">
+									<i class="zmdi zmdi-search"></i>
+								</button>
+							</form>
+							<div class="header-button">
+
+								<div class="account-wrap">
+									<div class="account-item clearfix js-item-menu">
+										<div class="content">
+											<a class="js-acc-btn" href="#"><h:outputText
+													value="#{user.getName()}" /></a>
+										</div>
+										<div class="account-dropdown js-dropdown">
+											<div class="account-dropdown__footer">
+												<h:form>
+													<h:commandLink action="#{User.logout()}">
+														<i class="zmdi zmdi-power"></i>Logout</h:commandLink>
+												</h:form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- HEADER DESKTOP-->
+			<div class="main-content">
+				<div class="section__content section__content--p30">
+					<div style="margin-left: 100px;margin-top: 25px">
+						<f:view>
+							<b:form id="newart" rendered="true">
+
+								<div style="display: none">
+									<h:inputText id="id" value="#{Article.codeart}" rendered="true" />
+								</div>
+								<b:row>
+									<b:column>
+										<b:inputText placeholder="Nom d'article"
+											value="#{Article.nomart}" required="true" style="width:250px" />
+									</b:column>
+								</b:row>
+								<b:row>
+									<b:column>
+										<b:inputTextarea placeholder="Description"
+											value="#{Article.descart}" required="true"
+											style="width:250px" />
+									</b:column>
+								</b:row>
+								<b:row>
+									<b:column>
+										<b:inputText placeholder="Prix" value="#{Article.prixart}"
+											required="true" style="width:250px" />
+									</b:column>
+								</b:row>
+								<b:row>
+									<b:column>
+										<b:commandButton ajax="false" dismiss="modal"
+											value="Enregistrer" action="#{Article.addArticle()}"
+											look="success" />
+									</b:column>
+								</b:row>
+							</b:form>
+						</f:view>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+<!-- Vendor JS       -->
+<script src="vendor/slick/slick.min.js">
+        </script>
+<script src="vendor/wow/wow.min.js"></script>
+<script src="vendor/animsition/animsition.min.js"></script>
+<script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+        </script>
+<script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+<script src="vendor/counter-up/jquery.counterup.min.js">
+        </script>
+<script src="vendor/circle-progress/circle-progress.min.js"></script>
+<script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="vendor/chartjs/Chart.bundle.min.js"></script>
+<script src="vendor/select2/select2.min.js">
+        </script>
+
+<!-- Main JS-->
+<script src="js/main.js"></script>
+</html>

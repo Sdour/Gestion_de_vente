@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="DAO.Command" table="command" catalog="vente">
+        <id name="codecmd" type="java.lang.Integer">
+            <column name="CODECMD" default="2"/>
+            <generator class="identity" />
+        </id>
+        <property name="codeart" type="java.lang.Integer">
+            <column name="CODEART" not-null="true" />
+        </property>
+        <property name="codeclient" type="java.lang.Integer">
+            <column name="CODECLIENT" not-null="true" />
+        </property>
+        <property name="quantitecmd" type="java.lang.Long">
+            <column name="QUANTITECMD" />
+        </property>
+        <property name="datecmd" type="java.util.Date">
+            <column name="DATECMD" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

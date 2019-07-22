@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="DAO.Client" table="client" catalog="vente">
+        <id name="codeclient" type="java.lang.Integer">
+            <column name="CODECLIENT" default="2"/>
+            <generator class="identity" />
+        </id>
+        <property name="nomclient" type="java.lang.String">
+            <column name="NOMCLIENT" length="65535" default="null"/>
+        </property>
+        <property name="tel" type="java.lang.Long">
+            <column name="TEL" default="null"/>
+        </property>
+    </class>
+</hibernate-mapping>
